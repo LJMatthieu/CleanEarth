@@ -1,0 +1,94 @@
+.containeur-header {
+    height: 15vh;
+    width: 100vw;
+
+    display: flex;
+    align-items: center;
+
+    .containeur-margin {
+        height: 90%;
+        width: 100%;
+
+        .grid-header-containeur {
+            margin-left: 9%;
+            margin-right: 3%;
+            display: grid;
+            height: 100%;
+            grid-template-columns: 10% 90%;
+            grid-template-rows: 70% 30%;
+            grid-column-gap: 3%;
+
+
+            .image-logo {
+                grid-row: 1 / -1;
+                background-image: url("../../assets/logobleu.svg");
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            .navbar-containeur {
+                width: 100%;
+                height: 100%;
+                grid-row: 2/2;
+                display: flex;
+                align-items: center;
+                
+
+                .navbar-items {
+                    padding: 15px;
+                    color: gray;
+                }
+            }
+
+         .presentation-containeur {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            
+            .presentation-title {
+               color: rgb(41, 142, 201);  
+            }
+
+            .presentation-button-containeur {
+                display: flex;
+                
+
+                .button-presentation {
+                    margin: 9px;
+                    padding: 17px;
+
+                    background-color: rgb(41, 142, 201);
+                    border-radius: 5px;
+                    font-size: 15px;
+                    text-transform: uppercase;
+                    font-weight: 800;   
+                }
+
+                .button-presentation:nth-child(1) {
+                    background-color: white;
+                    color: rgb(41, 142, 201);
+                }
+
+                .button-presentation:nth-child(2) {
+                    color: white;
+                    background-color: rgb(41, 142, 201);
+                }
+            }
+         }
+         
+         .presentation-containeur::after{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            height: 1px;
+            background-color: rgb(224, 222, 222);
+            width: 100%;
+         }
+
+        }
+
+    }
+    
+}
+
