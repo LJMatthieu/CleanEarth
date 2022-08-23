@@ -53,6 +53,19 @@
             .presentation-button-containeur {
                 display: flex;
                 
+                .country {
+                    display: flex;
+                    align-items: center;
+
+                    .items-country {
+                        margin: 3px;
+                        color: gray;
+                    }
+
+                    .items-country:nth-child(1) {
+                        color: rgb(112, 111, 111);
+                    }
+                }
 
                 .button-presentation {
                     margin: 9px;
@@ -65,12 +78,12 @@
                     font-weight: 800;   
                 }
 
-                .button-presentation:nth-child(1) {
+                .button-presentation:nth-child(2) {
                     background-color: white;
                     color: rgb(41, 142, 201);
                 }
 
-                .button-presentation:nth-child(2) {
+                .button-presentation:nth-child(3) {
                     color: white;
                     background-color: rgb(41, 142, 201);
                 }
