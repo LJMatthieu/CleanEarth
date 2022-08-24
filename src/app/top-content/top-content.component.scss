@@ -20,14 +20,11 @@
 
         background-color: aquamarine;
 
-        .flex-center-containeur {
-            display: flex;
-            flex-direction: column;
-
-            .title {
-                justify-items: center;
-                align-items: center;
-            }
+        .grid-center-containeur {
+            display: grid;
+            height: 100%;
+            grid-template-columns: 100%;
+            grid-template-rows: 20% 25% 55%;
         }
     }
 }
