@@ -105,3 +105,72 @@
     
 }
 
+.containeur-header-smartphone {
+    height: 15vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .header-smartphone-flex {
+        height: 14vh;
+        width: 100vw;
+
+        margin-left: 10%;
+        margin-right: 4%;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .logo-smarthphone {
+            height: 100%;
+            width: 100%;
+            background-image: url("../../assets/logobleu.svg");
+            background-repeat: no-repeat;
+        }
+        .button-smartphone {
+            height: 25px;
+            width:  35px;
+
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+
+            .decoration {
+                height: 5px;
+                width: 100%;
+
+                background-color: rgb(41, 142, 201);
+                border-radius: 3px;
+            }
+        }
+    }
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 1400px) {
+    .presentation-title {
+        font-size: 12px !important;
+    }
+}
+
+@media only screen and (max-width : 1000px) {
+    .presentation-title {
+        display: none !important;
+    }
+    .presentation-containeur {
+        justify-content: flex-end !important;
+    }
+
+    @media only screen and (max-width : 700px) {
+        .containeur-header {
+           display: none !important;
+        }
+
+        .containeur-header-smartphone{
+            display: flex !important;
+        }
+    }
+}
