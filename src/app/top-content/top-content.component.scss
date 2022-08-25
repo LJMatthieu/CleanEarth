@@ -2,7 +2,7 @@
     width: 100vw;
     height: 100vh;
 
-    background-image: url("../../assets/45401.jpg");
+    background-image: url("../../assets/48462.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -11,20 +11,144 @@
 
     .center-containeur {
         position: absolute;
-        height: 45%;
+        height: 35%;
         width: 50%;
 
-        top: 50%;
+        top: 30%;
         left: 50%;
         transform: translate(-50%, -50%);
 
-        background-color: aquamarine;
 
         .grid-center-containeur {
             display: grid;
             height: 100%;
             grid-template-columns: 100%;
-            grid-template-rows: 20% 25% 55%;
+            grid-template-rows: repeat(3, 33%);
+
+            .title-containeur {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                color: whitesmoke;
+                font-size: 55px;
+                font-weight: 600;
+            }
+
+            .text-containeur {
+                text-align: center;
+                color: whitesmoke;
+                font-size: 25px;
+                font-weight: 400;
+            }
+
+            .button-containeur {
+                display: flex;
+                justify-content: space-around;
+                align-items: flex-start;
+
+                .bouton-item {
+                    padding: 20px;
+                    padding-left: 70px;
+                    padding-right: 70px;
+                    border-radius: 5px;
+
+                    text-transform: uppercase;
+                    cursor: pointer;
+                }
+
+                .bouton-item:nth-child(1) {
+                    border: 3px solid white;
+                    color: rgb(41, 142, 201);
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+
+                .bouton-item:nth-child(2) {
+                    background-color: rgb(41, 142, 201);
+                    color: whitesmoke;
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 1200px) {
+    .center-containeur {
+        width: 70% !important;
+    }
+}
+
+@media only screen and (max-width : 1000px) {
+    .text-containeur {
+        display: none !important;
+    }
+
+    .center-containeur {
+        width: 80% !important;
+    }
+}
+
+@media only screen and (max-width : 800px) {
+    .grid-center-containeur {
+       display: none !important;
+    }
+
+    .grid-center-containeur-smartphone {
+        display: grid !important;
+        grid-template-columns: 100% !important;
+        grid-template-rows: 25% 37.5% 37.5% !important;
+        height: 65%;
+
+        .item-smartphone {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .title-smarthpone {
+            color: whitesmoke;
+            font-weight: 600;
+            font-size: 38px;
+            grid-row: 1/2;
+            text-align: center;
+
+        }
+
+        .containeur-button-smartphone {
+            display: flex;
+            flex-direction: column;
+            grid-row: 2 /-1;
+
+            align-items: center;
+            justify-content: space-around;
+
+            .button-smartphone {
+                padding: 15px;
+                padding-left: 70px;
+                padding-right: 70px;
+                border-radius: 5px;
+
+                text-transform: uppercase;
+                cursor: pointer;
+            }
+
+            .button-smartphone:nth-child(1) {
+                border: 3px solid white;
+                color: rgb(41, 142, 201);
+                font-size: 18px;
+                font-weight: 600;
+            }
+
+            .button-smartphone:nth-child(2) {
+                background-color: rgb(41, 142, 201);
+                color: whitesmoke;
+                font-size: 18px;
+                font-weight: 600;
+            }
         }
     }
 }
