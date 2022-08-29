@@ -13,7 +13,7 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
-      "architect": {
+      "architect": { 
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
@@ -27,8 +27,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
-            ],
+              "./node_modules/leaflet/dist/leaflet.css",
+              "src/styles.scss"
+            ], 
             "scripts": []
           },
           "configurations": {
@@ -94,7 +95,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }

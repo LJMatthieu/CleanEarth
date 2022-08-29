@@ -1,0 +1,19 @@
+.map-container {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+
+    #map {
+      height: 100%;
+    }
+    
+    .search-containeur {
+      position: absolute;
+
+      height: 5%;
+      width: 15%;
+      background-color: palevioletred;
+      top: 0;
+      z-index: 10;
+    }
+}
