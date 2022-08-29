@@ -9,14 +9,16 @@ import { ServerService } from '../server.service';
   styleUrls: ['./maps.component.scss']
 })
 export class MapsComponent implements AfterViewInit {
+
   private map: any;
+  private nbr_collecte : number = 0 ;
 
   constructor(private server : ServerService) { }
 
   private initMap(): void {
     this.map = L.map('map', {
-      center: [ 39.8282, -98.5795 ],
-      zoom: 3
+      center: [ 48.862725, 2.287592 ],
+      zoom: 5
     }); 
 
     const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -31,6 +33,8 @@ export class MapsComponent implements AfterViewInit {
         var marker = L.marker([val.latitude, val.longitude]).addTo(this.map);
         marker.bindPopup(this.generateDom(val))
         tiles.addTo(this.map);
+
+        this.nbr_collecte ++;
       }
     });
   }
@@ -50,5 +54,9 @@ export class MapsComponent implements AfterViewInit {
   formatDate(date : string) : string {
     var datePipe = new DatePipe("en-US");
     return "" + datePipe.transform(date, 'dd/MM/yyyy h:mm a');
+  }
+
+  getNumberOffCollecte() : number {
+    return this.nbr_collecte;
   }
 }

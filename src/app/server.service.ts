@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ServerService {
+  apiURL: string = 'http://localhost:8083/collectes/api';
 
   constructor(private http: HttpClient) {
     this.getJSON().subscribe(data => {
@@ -14,7 +15,7 @@ export class ServerService {
   }
 
   public getJSON(): Observable<any> {
-      return this.http.get("../assets/test.json");
+      return this.http.get(this.apiURL);
   }
 
 }
