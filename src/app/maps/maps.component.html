@@ -11,20 +11,29 @@
 </header>
 
 <body>
-    <div class="map-container">
-        
-        <div id="map"></div>       
-        <div class="search-containeur">
-            <div class="data-containeur">
-                <div class="title-search">Participer à l'une des {{ getNumberOffCollecte() }} collectes !</div>
-                <div class="spacer"></div>
-                <div class="search-bar-containeur">
-                    <input type="search" placeholder="Entrer un nom de ville ..." class="search-bar" name="q">
-                    <div class="button-containeur"><i class="fa-solid fa-magnifying-glass"></i></div>
-                </div>
-               
-            </div>
+
+    <div class="main-containeur">
+
+        <div class="search-bar-containeur-smartphone" style="display: none;">
+            <input type="search" placeholder="Entrer un nom de ville ..." class="search-bar-smartphone" name="q">
+            <div class="button-containeur-smartphone"><i class="fa-solid fa-magnifying-glass"></i></div>
         </div>
-    </div>      
+
+        <div class="map-container">        
+            <div id="map"></div>       
+            <div class="search-containeur">
+                <div class="data-containeur">
+                    <div class="title-search">Participer à l'une des {{ getNumberOffCollecte() }} collectes !</div>
+                    <div class="spacer"></div>
+                    <div class="search-bar-containeur">
+                        <input type="search" placeholder="Entrer un nom de ville ..." class="search-bar" name="q">
+                        <div class="button-containeur"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    </div>               
+                </div>
+            </div>
+        </div>   
+    </div>
+    
+
 </body>
 </html>

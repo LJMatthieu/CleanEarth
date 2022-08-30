@@ -64,7 +64,80 @@
             border-radius: 50%;
             border: 1px solid black;
           }
+
+          .button-containeur:hover {
+            background-color: rgb(41, 142, 201);
+            color: white;
+          }
         }
       }     
     }
+}
+
+/**
+  CSS for responsiv
+*/
+
+.main-containeur-smartphone {
+  height: 80vw;
+  width: 100vw;
+
+  .top-search-bar-containeur-smartphone {
+    height: 3vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+      .search-bar-smartphone {
+        width: 85%;
+        height: 100%;
+      }
+
+      .button-containeur-smartphone {
+        padding: 7px;
+        border: 1px solid black;
+        border-radius: 50%;
+      }
+    }
+
+    .map-containeur-smartphone {
+      width: 100vw;
+      height: 77vh;
+      z-index: 1;
+
+      #map-smartphone {
+        height: 100%;
+        z-index: -1;
+
+      }
+    }
+  }
+
+@media only screen and (max-width : 1000px) {
+  .search-containeur {
+      display: none !important;
+  }
+
+  .search-bar-containeur-smartphone {
+    display: flex !important;
+    justify-content: space-around;
+    align-items: center;
+
+    height: 5vh !important;
+    width: 100vw !important;  
+
+    margin-bottom: 2vh;
+
+    .search-bar-smartphone {
+      width: 85%;
+      height: 100%;
+      font-size: 18px;
+    }
+
+    .button-containeur-smartphone {
+      padding: 12px;
+      border: solid 1px black;
+      border-radius: 50%;
+    }
+  } 
 }

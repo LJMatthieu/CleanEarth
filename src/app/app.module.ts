@@ -10,6 +10,7 @@ import { MapsComponent } from './maps/maps.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ServerService } from './server.service';
+import { OrganiserComponent } from './organiser/organiser.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ServerService } from './server.service';
     TopContentComponent,
     ChangementComponent,
     MapsComponent,
-    HomeComponent
+    HomeComponent,
+    OrganiserComponent
   ],
   imports: [
     BrowserModule,
