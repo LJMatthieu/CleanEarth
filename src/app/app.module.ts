@@ -9,8 +9,9 @@ import { ChangementComponent } from './changement/changement.component';
 import { MapsComponent } from './maps/maps.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ServerService } from './server.service';
 import { OrganiserComponent } from './organiser/organiser.component';
+import { FormsModule } from '@angular/forms';
+import { CollecteService } from './services/collecte.service';
 
 @NgModule({
   declarations: [
@@ -25,10 +26,11 @@ import { OrganiserComponent } from './organiser/organiser.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
     
   ],
-  providers: [ServerService],
+  providers: [CollecteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

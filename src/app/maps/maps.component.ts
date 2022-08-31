@@ -1,21 +1,27 @@
 import { DatePipe } from '@angular/common';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
-import { ServerService } from '../server.service';
+import { CollecteService } from '../services/collecte.service';
 
 @Component({
   selector: 'app-maps',
   templateUrl: './maps.component.html',
   styleUrls: ['./maps.component.scss']
 })
-export class MapsComponent implements AfterViewInit {
+export class MapsComponent implements AfterViewInit, OnInit {
 
   private map: any;
   private nbr_collecte : number = 0 ;
 
-  constructor(private server : ServerService) { }
+  constructor(private collecteService : CollecteService) {    
+  }
+
+  ngOnInit(): void {
+
+  }
 
   private initMap(): void {
+    
     this.map = L.map('map', {
       center: [ 48.862725, 2.287592 ],
       zoom: 5
@@ -27,16 +33,24 @@ export class MapsComponent implements AfterViewInit {
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     });
 
-    
-    this.server.getJSON().subscribe(data => {
+
+    this.collecteService.getListOfCollect().subscribe(data => {
+
       for (var val of data) {
-        var marker = L.marker([val.latitude, val.longitude]).addTo(this.map);
+        var lat_nbr: number = val.latitude as number;
+        var lng_nbr: number = val.longitude as number;
+  
+       var marker = L.marker([lat_nbr, lng_nbr], {icon:
+        this.getGPSIcon()}).addTo(this.map).openPopup();
         marker.bindPopup(this.generateDom(val))
-        tiles.addTo(this.map);
 
         this.nbr_collecte ++;
       }
     });
+
+    tiles.addTo(this.map);
+
+
   }
   ngAfterViewInit(): void {
     this.initMap(); 
@@ -58,5 +72,13 @@ export class MapsComponent implements AfterViewInit {
 
   getNumberOffCollecte() : number {
     return this.nbr_collecte;
+  }
+
+  getGPSIcon() {
+    const GPSIcon = L.icon({
+      iconUrl: '../assets/gps-marker-icon-4.jpg',
+      iconSize: [40, 40]
+    });
+    return GPSIcon;
   }
 }

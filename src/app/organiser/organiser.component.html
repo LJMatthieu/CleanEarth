@@ -1,1 +1,41 @@
-<p>organiser works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<header>
+    <app-header></app-header>
+</header>
+
+<body>
+    
+    <div class="main-containeur">
+        <div class="center-contianeur">
+            <div class="title-organiser">Organiser une collecte !</div>
+
+            <input type="number" placeholder="ID" class="search-bar" [(ngModel)]="newCollecte.id" name="id">
+
+            <input type="text" placeholder="nom de la plage" [(ngModel)]="newCollecte.beachName" name="beachName">
+            <input type="text" placeholder="descriptions" [(ngModel)]="newCollecte.descriptions" name="descriptions">
+            <input type="text" placeholder="organisateur" [(ngModel)]="newCollecte.organisateur" name="organisateur">
+
+            <input type="number" placeholder="latitude" class="search-bar" [(ngModel)]="newCollecte.latitude" name="latitude">
+            <input type="number" placeholder="longitude" class="search-bar" [(ngModel)]="newCollecte.longitude" name="longitude">
+            <input type="date" placeholder="date de la collecte" class="search-bar" [(ngModel)]="newCollecte.dateCollecte" name="dateCollecte">
+
+            <button type="submit" (click)="addCollecte()"class="btn btn-success">Ajouter</button>
+
+
+            <div class="map-container">        
+                <div id="map"></div>    
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
