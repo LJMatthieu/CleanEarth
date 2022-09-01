@@ -67,9 +67,13 @@
             </div>
 
             <div class="button-containeur">
-                <div class="back-button"><button type="submit" >Annuler</button></div>
-                <div class="next-button"><button type="submit" (click)="addCollecte()">Valider</button></div>
+                <div class="center-containeur">
+                    <button type="submit" class="back-button commun-button" >Annuler</button>
+                    <button type="submit" class="next-button commun-button" (click)="addCollecte()">Valider</button>
+                </div>             
             </div>
+
+            <div class="feed-back" style="color: green; display: flex; align-items: center; justify-content: center;">{{feedback}}</div>
            
         </div>
     </div>

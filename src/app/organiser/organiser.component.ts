@@ -14,6 +14,8 @@ export class OrganiserComponent implements OnInit {
   private map: any;
   private marker : any;
 
+  feedback = '';
+
   constructor(private collecteService : CollecteService) { }
 
   ngOnInit(): void {
@@ -51,7 +53,7 @@ export class OrganiserComponent implements OnInit {
   addCollecte(){
     this.collecteService.addCollecte(this.newCollecte)
     .subscribe(prod => {
-    console.log(prod);
+      this.feedback = 'Votre collecte à été ajouté avec succès !'
     });
   }
     

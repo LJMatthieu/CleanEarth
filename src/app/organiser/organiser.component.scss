@@ -102,11 +102,42 @@
 
         .button-containeur {
             height: 10vh;
-            width: 85%;
-            background-color: orange;
+            width: 100%;
 
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
+
+            .center-containeur {
+                width: 35%;
+                height: 100%;
+
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                
+                .back-button {
+                   color: rgb(41, 142, 201);
+                   border: 2px solid rgb(41, 142, 201);
+                }
+
+                .next-button {
+                    background-color: rgb(41, 142, 201);
+                    color: white;
+                    border: none;
+                }
+
+                .commun-button {
+                    cursor: pointer;
+                    
+                    padding: 20px;
+                    padding-left: 70px;
+                    padding-right: 70px;
+
+                    border-radius: 2x;
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+            }
         }
     }
 }
