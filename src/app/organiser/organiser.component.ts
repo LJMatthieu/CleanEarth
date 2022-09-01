@@ -12,6 +12,7 @@ export class OrganiserComponent implements OnInit {
 
   newCollecte = new Collecte();
   private map: any;
+  private marker : any;
 
   constructor(private collecteService : CollecteService) { }
 
@@ -34,9 +35,16 @@ export class OrganiserComponent implements OnInit {
 
     tiles.addTo(this.map);
 
-   this.map.on('click', function (e: { latlng: { lat: any; lng: any; }; }) {
-      console.log("lat: " + e.latlng.lat)
-      console.log("lon: " + e.latlng.lng)
+   this.map.on('click',  (e: { latlng: { lat: any; lng: any; }; }) => {
+      this.newCollecte.latitude  = e.latlng.lat;
+      this.newCollecte.longitude  = e.latlng.lng;
+
+      if(this.marker !== undefined) {
+        this.map.removeLayer(this.marker);
+      }
+
+       this.marker = L.marker([e.latlng.lat, e.latlng.lng], {icon:
+        this.getGPSIcon()}).addTo(this.map).openPopup();
     });
   }
 
@@ -47,5 +55,12 @@ export class OrganiserComponent implements OnInit {
     });
   }
     
+  getGPSIcon() {
+    const GPSIcon = L.icon({
+      iconUrl: '../assets/gps-marker-icon-4.jpg',
+      iconSize: [40, 40]
+    });
+    return GPSIcon;
+  }
 
 }
