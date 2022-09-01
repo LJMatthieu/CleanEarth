@@ -15,27 +15,63 @@
     
     <div class="main-containeur">
         <div class="center-contianeur">
-            <div class="title-organiser">Organiser une collecte !</div>
+            
+            <div class="first-form">
+                <div class="title">Organiser une collecte</div>
+                    <div class="containeur-bar">
+                        <div class="search-containeur">
+                            <div class="title-search-bar">Numéro de la collecte *</div>
+                            <input type="number" class="search-bar" [(ngModel)]="newCollecte.id" name="id">
+                        </div>
 
-            <input type="number" placeholder="ID" class="search-bar" [(ngModel)]="newCollecte.id" name="id">
+                        <div class="search-containeur">
+                            <div class="title-search-bar">Nom de la plage *</div>
+                            <input type="text"  class="search-bar" [(ngModel)]="newCollecte.beachName" name="beachName">
+                        </div>
 
-            <input type="text" placeholder="nom de la plage" [(ngModel)]="newCollecte.beachName" name="beachName">
-            <input type="text" placeholder="descriptions" [(ngModel)]="newCollecte.descriptions" name="descriptions">
-            <input type="text" placeholder="organisateur" [(ngModel)]="newCollecte.organisateur" name="organisateur">
+                        <div class="search-containeur">
+                            <div class="title-search-bar">Descriptions</div>
+                            <input type="text"  class="search-bar" [(ngModel)]="newCollecte.descriptions" name="descriptions">
+                        </div>
 
-            <input type="number" placeholder="latitude" class="search-bar" [(ngModel)]="newCollecte.latitude" name="latitude">
-            <input type="number" placeholder="longitude" class="search-bar" [(ngModel)]="newCollecte.longitude" name="longitude">
-            <input type="date" placeholder="date de la collecte" class="search-bar" [(ngModel)]="newCollecte.dateCollecte" name="dateCollecte">
+                        <div class="search-containeur">
+                            <div class="title-search-bar">Identité organisateur</div>
+                            <input type="text"  class="search-bar" [(ngModel)]="newCollecte.organisateur" name="organisateur">
+                        </div>
 
-            <button type="submit" (click)="addCollecte()"class="btn btn-success">Ajouter</button>
-
-
-            <div class="map-container">        
-                <div id="map"></div>    
+                        <div class="search-containeur">
+                            <div class="title-search-bar">Date de la collecte</div>
+                            <input type="date" class="search-bar" [(ngModel)]="newCollecte.dateCollecte" name="dateCollecte">
+                        </div>                       
+                    </div>
+                
             </div>
 
+            <div class="second-form">
+                <div class="title">Localisation de la collecte</div>
+
+                <div class="map-container">        
+                    <div id="map"></div>    
+                </div>
+
+                <div class="latlng-containeur">
+                    <div class="search-containeur">
+                        <div class="title-search-bar">Latitude</div>
+                        <input type="number"  class="search-bar" [(ngModel)]="newCollecte.latitude" name="latitude">
+                    </div>  
+                    <div class="search-containeur">
+                        <div class="title-search-bar">Longitude</div>
+                        <input type="number"  class="search-bar" [(ngModel)]="newCollecte.longitude" name="longitude">
+                    </div>         
+                </div>            
+            </div>
+
+            <div class="button-containeur">
+                <div class="back-button"><button type="submit" >Annuler</button></div>
+                <div class="next-button"><button type="submit" (click)="addCollecte()">Valider</button></div>
+            </div>
+           
         </div>
     </div>
-
 </body>
 </html>

@@ -1,5 +1,5 @@
 .main-containeur {
-    height: 80vh;
+    height: 140vh;
     width: 100vw;
     margin-top: 2vh;
 
@@ -11,27 +11,102 @@
     .center-contianeur {
         width: 70vw;
         height: 100%;
-
         display: flex;
         flex-direction: column;
 
-        .title-organiser {
-            color: black;
-            font-size: 25px;
-            letter-spacing: 1px;
+        .title {
+            font-size: 22px;
+            letter-spacing: 1.15px;
             text-transform: uppercase;
+            font-weight: 600;
         }
-    }
 
-    .map-container {
-        height: 85vh;
-        width: 100%;
-        position: relative;
-        z-index: 1;
-        
-        #map {
-          height: 100%;
-          z-index: -1;
+        .first-form {
+            height: 40%;
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .containeur-bar {
+                margin-left: 2%;
+                width: 100%;
+                height: 95%;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+
+                .search-containeur {
+                    width: 98%;
+                    height: 15%;
+
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+
+                    .title-search-bar {
+                        font-size: 18px;
+                        font-weight: 600;
+                    }
+
+                    .search-bar {
+                        width: 40%;
+                        height: 3vh;
+                        border: 1px solid grey;
+                        border-radius: 3px;
+                    }
+                }
+            }
+        }
+
+        .second-form {
+            height: 60%;
+            width: 100%;
+
+            .map-container {
+                margin-left: 2%;
+                margin-top: 2vh;
+                height: 85%;
+                width: 98%;
+                position: relative;
+                z-index: 1;
+                
+                #map {
+                height: 100%;
+                z-index: -1;
+                }
+            }
+
+            .latlng-containeur {
+                width: 100%;
+                height: 10%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+
+                .title-search-bar {
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+
+                .search-bar {
+                    width: 100%;
+                    height: 3vh;
+                    border: 1px solid grey;
+                    border-radius: 3px;
+                }
+            }
+        }
+
+        .button-containeur {
+            height: 10vh;
+            width: 85%;
+            background-color: orange;
+
+            display: flex;
+            justify-content: space-around;
         }
     }
 }
